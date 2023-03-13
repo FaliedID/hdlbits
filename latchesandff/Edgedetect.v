@@ -7,11 +7,8 @@ module top_module (
     reg [7:0] in_dly_2;
     
     always @(posedge clk) begin
-        in_dly = in;
-    end
-    
-    always @(posedge clk) begin
-        in_dly_2 = in_dly;
+        in_dly <= in;
+        in_dly_2 <= in_dly;
     end
     
     assign pedge = in_dly & ~in_dly_2;
