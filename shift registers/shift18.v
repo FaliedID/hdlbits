@@ -1,3 +1,4 @@
+// arithmetic shifter 1 or 8 bits
 module top_module(
     input clk,
     input load,
@@ -23,7 +24,7 @@ module top_module(
                         q[63:8] <= q[55:0];
                         q[7:0] <= 0;
                     end
-                2'b10: q[62:0] <= q[63:1];     // shift right 1 bit
+                2'b10: q[62:0] <= q[63:1];     // shift right 1 bit (arithmetic)
                 2'b11: // shift right 8 bits (arithmetic)
                     begin
                         if(q[63]) begin
