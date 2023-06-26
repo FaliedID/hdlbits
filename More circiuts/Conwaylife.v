@@ -20,7 +20,7 @@ module top_module(
             array[17][i] = array[1][i];
             array[0][i] = array[16][i];
         end
-        // columbs
+        // columns
         for(i=1;i<=16;i=i+1) begin
             array[i][17] = array[i][1];
             array[i][0] = array[i][16];
