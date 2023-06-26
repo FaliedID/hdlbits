@@ -13,18 +13,18 @@ module top_module(
         end
         else if(ena) begin
             case (amount)
-                2'b00:
+                2'b00:    // shift left 1 bit
                     begin
                         q[63:1] <= q[62:0];
                         q[0] <= 0;
                     end
-                2'b01:
+                2'b01:    // shift left 8 bits
                     begin
                         q[63:8] <= q[55:0];
                         q[7:0] <= 0;
                     end
-                2'b10: q[62:0] <= q[63:1];
-                2'b11:
+                2'b10: q[62:0] <= q[63:1];     // shift right 1 bit
+                2'b11: // shift right 8 bits (arithmetic)
                     begin
                         if(q[63]) begin
                             q[55:0] <= q[63:8];
